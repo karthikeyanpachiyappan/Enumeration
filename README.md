@@ -1,10 +1,10 @@
 # Enumeration
 Enumeration Techniques
 
-### BY: HARI PRASATH. P
-### REG. NO: 212223230070
+# Explore Google hacking and enumeration 
 
 # AIM:
+
 To use Google for gathering information and perform enumeration of targets
 
 ## STEPS:
@@ -20,7 +20,6 @@ Investigate on the various Google hacking keywords and enumeration tools as foll
 
 ### Step 3:
 Open terminal and try execute some kali linux commands
-
 ## Pen Test Tools Categories:  
 
 Following Categories of pen test tools are identified:
@@ -32,65 +31,110 @@ Google hacking, also known as Google dorking, is a technique that involves using
 
 site: This operator allows you to search for pages that are within a specific website or domain. For example, "site:example.com" would search for pages that are on the example.com domain.
 Following searches for all the sites that is in the domain yahoo.com
-![Screenshot 2025-03-15 091312](https://github.com/user-attachments/assets/9882782b-8537-4c81-9f8d-79544ae172dc)
 
+
+![image](https://github.com/user-attachments/assets/b270da46-1750-467b-901f-531157bd31b4)
 
 
 filetype: This operator allows you to search for files of a specific type. For example, "filetype:pdf" would search for all PDF files.
 Following searches for pdf file in the domain yahoo.com
-![Screenshot 2025-03-15 091356](https://github.com/user-attachments/assets/6585f766-da2d-4d5d-9229-d1fafa646543)
+
+
+![image](https://github.com/user-attachments/assets/40c83eea-2552-4285-9599-a53edfe81220)
+
 
 
 intext: This operator allows you to search for pages that contain specific text within the body of the page. For example, "intext:password" would search for pages that contain the word "password" within the body of the page.
-![Screenshot 2025-03-15 091517](https://github.com/user-attachments/assets/0cc73da8-8d9b-42c7-8d9a-a152ad9b5da9)
+
+![image](https://github.com/user-attachments/assets/33c62df1-e736-4dbb-8c5c-bb1909a26287)
+
 
 
 inurl: This operator allows you to search for pages that contain specific text within the URL. For example, "inurl:admin" would search for pages that contain the word "admin" within the URL.
-![Screenshot 2025-03-15 091639](https://github.com/user-attachments/assets/1766e7b4-1d11-4616-b0a5-9bcb50a540c8)
 
+![image](https://github.com/user-attachments/assets/01b7e93f-18e3-4f22-a4ef-c1846839fe90)
 
 
 intitle: This operator allows you to search for pages that contain specific text within the title tag. For example, "intitle:index of" would search for pages that contain "index of" within the title tag.
-![Screenshot 2025-03-15 091729](https://github.com/user-attachments/assets/ffb927df-e49c-47f1-815e-f4a4935a81f6)
+
+![image](https://github.com/user-attachments/assets/8eafd7aa-6218-4d25-b632-1167a8882a02)
 
 
 link: This operator allows you to search for pages that link to a specific URL. For example, "link:example.com" would search for pages that link to the example.com domain.
-![Screenshot 2025-03-15 091809](https://github.com/user-attachments/assets/a98261d4-c284-4dd5-81f4-9de2cab4a71b)
 
+![image](https://github.com/user-attachments/assets/09e04322-1ef4-4690-97b5-1dd546a430ab)
+
+
+cache: This operator allows you to view the cached version of a page. For example, "cache:example.com" would show the cached version of the example.com website.
+
+
+![image](https://github.com/user-attachments/assets/47ffc6fa-6b69-446a-a311-f3e6fa3a8aac)
 
  
 #DNS Enumeration
+
+
 ##DNS Recon
 provides the ability to perform:
 Check all NS records for zone transfers
 Enumerate general DNS records for a given domain (MX, SOA, NS, A, AAAA, SPF , TXT)
 Perform common SRV Record Enumeration
 Top level domain expansion
-## OUTPUT:
-![image](https://github.com/user-attachments/assets/f4b509a9-3494-4cf5-a981-c5546ca6aadb)
 
-## dnsenum
+## OUTPUT:
+
+
+![image](https://github.com/user-attachments/assets/d0d75c30-65bf-4da7-853b-0281e4aea02f)
+
+
+##dnsenum
 Dnsenum is a multithreaded perl script to enumerate DNS information of a domain and to discover non-contiguous ip blocks. The main purpose of Dnsenum is to gather as much information as possible about a domain. The program currently performs the following operations:
-![image](https://github.com/user-attachments/assets/2abe8a66-0ed3-4018-aa32-5622dc9aeda5)
-## smtp-user-enum
+
+Get the host’s addresses (A record).
+Get the namservers (threaded).
+Get the MX record (threaded).
+Perform axfr queries on nameservers and get BIND versions(threaded).
+Get extra names and subdomains via google scraping (google query = “allinurl: -www site:domain”).
+Brute force subdomains from file, can also perform recursion on subdomain that have NS records (all threaded).
+Calculate C class domain network ranges and perform whois queries on them (threaded).
+Perform reverse lookups on netranges (C class or/and whois netranges) (threaded).
+Write to domain_ips.txt file ip-blocks.
+This program is useful for pentesters, ethical hackers and forensics experts. It also can be used for security tests.
+
+
+![image](https://github.com/user-attachments/assets/68d92fd2-d06b-4241-8b56-b3107717bd98)
+
+
+![image](https://github.com/user-attachments/assets/ce75ec94-42a2-43cf-9c21-f1c7ced56585)
+
+
+##smtp-user-enum
 Username guessing tool primarily for use against the default Solaris SMTP service. Can use either EXPN, VRFY or RCPT TO.
+
+
 In metasploit list all the usernames using head /etc/passwd or cat /etc/passwd:
+
 select any username in the first column of the above file and check the same
+
+
 #Telnet for smtp enumeration
 Telnet allows to connect to remote host based on the port no. For smtp port no is 25
 telnet <host address> 25 to connect
 and issue appropriate commands
   
  ##Output
- ![image](https://github.com/user-attachments/assets/51e726c5-416f-4301-975a-e400b6b3197c)
+  
+ ![image](https://github.com/user-attachments/assets/8075a9cd-a76a-46d1-9af5-679ebb36eb65)
+ 
+
 ## nmap –script smtp-enum-users.nse <hostname>
 
 The smtp-enum-users.nse script attempts to enumerate the users on a SMTP server by issuing the VRFY, EXPN or RCPT TO commands. The goal of this script is to discover all the user accounts in the remote system.
 
 
 ## OUTPUT:
-![image](https://github.com/user-attachments/assets/29a65698-a085-4ae5-ba09-d516ea3c9e53)
 
+![image](https://github.com/user-attachments/assets/c588f7ac-dc4b-48b4-b4f4-f5fee3fd8a51)
 
 
 ## RESULT:
